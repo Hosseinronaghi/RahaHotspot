@@ -1,6 +1,6 @@
 plugins { id("com.android.application"); id("org.jetbrains.kotlin.android"); id("org.jetbrains.kotlin.plugin.compose") }
 android { namespace = "ir.raha.hotspot"; compileSdk = 36
- defaultConfig { applicationId = "ir.raha.hotspot"; minSdk = 29; targetSdk = 36; versionCode = 103; versionName = "1.0.0-rc.4" }
+ defaultConfig { applicationId = "ir.raha.hotspot"; minSdk = 29; targetSdk = 36; versionCode = 104; versionName = "1.0.0-rc.5" }
  buildFeatures { compose = true }
  compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
  kotlinOptions { jvmTarget = "17" }

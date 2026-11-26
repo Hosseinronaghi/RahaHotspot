@@ -37,7 +37,7 @@ jobs:
       - run: sha256sum app/build/outputs/apk/debug/*.apk app/build/outputs/bundle/debug/*.aab > SHA256SUMS
       - uses: actions/upload-artifact@v4
         with:
-          name: RahaHotspot-rc4-debug
+          name: RahaHotspot-rc5-debug
           path: |
             app/build/outputs/apk/debug/*.apk
             app/build/outputs/bundle/debug/*.aab
