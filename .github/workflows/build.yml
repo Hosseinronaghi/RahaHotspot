@@ -27,7 +27,13 @@ jobs:
           curl --fail --location --retry 3 "$base/OFL.txt" -o app/src/main/assets/licenses/Vazirmatn-OFL.txt
           test -s app/src/main/res/font/vazirmatn_regular.ttf
           test -s app/src/main/res/font/vazirmatn_bold.ttf
-      - run: gradle :app:compileDebugKotlin :app:assembleDebug :app:bundleDebug :app:lintDebug :app:testDebugUnitTest
+      - run: gradle :app:compileDebugKotlin :app:assembleDebug :app:bundleDebug :app:testDebugUnitTest
+      - name: Android Lint
+        run: |
+          gradle :app:lintDebug || {
+            cat app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
+            exit 1
+          }
       - run: sha256sum app/build/outputs/apk/debug/*.apk app/build/outputs/bundle/debug/*.aab > SHA256SUMS
       - uses: actions/upload-artifact@v4
         with:
